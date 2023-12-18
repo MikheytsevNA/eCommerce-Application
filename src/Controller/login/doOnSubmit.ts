@@ -44,7 +44,7 @@ export async function doOnAuthSubmit(event: SubmitEvent) {
     if (response.cart) {
       const existingCartResponse = await getApiRoot()
         .withProjectKey({
-          projectKey: 'new-ecommerce-app',
+          projectKey: import.meta.env.VITE_PROJECT_KEY,
         })
         .carts()
         .withId({ ID: response.cart })
@@ -59,7 +59,7 @@ export async function doOnAuthSubmit(event: SubmitEvent) {
     } else {
       const basketUpdateResponse = await getApiRoot()
         .withProjectKey({
-          projectKey: 'new-ecommerce-app',
+          projectKey: import.meta.env.VITE_PROJECT_KEY,
         })
         .carts()
         .withId({ ID: cartCookieValue! })

@@ -5,7 +5,7 @@ import { AuthResponse } from './registerationTypes.ts';
 function getProject(options: MyCustomerDraft) {
   return getApiRoot()
     .withProjectKey({
-      projectKey: 'new-ecommerce-app',
+      projectKey: import.meta.env.VITE_PROJECT_KEY,
     })
     .me()
     .signup()

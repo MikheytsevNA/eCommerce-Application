@@ -56,7 +56,7 @@ function getCurrencySign(currency: string) {
 export async function getProductData(id: string) {
   const response = await getApiRoot()
     .withProjectKey({
-      projectKey: 'new-ecommerce-app',
+      projectKey: import.meta.env.VITE_PROJECT_KEY,
     })
     .productProjections()
     .withId({ ID: id })

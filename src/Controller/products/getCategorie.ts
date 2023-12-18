@@ -3,7 +3,7 @@ import { getApiRoot } from '../apiRoot/generalClient.ts';
 function getSimpleCategories() {
   return getApiRoot()
     .withProjectKey({
-      projectKey: 'new-ecommerce-app',
+      projectKey: import.meta.env.VITE_PROJECT_KEY,
     })
     .categories()
     .get()

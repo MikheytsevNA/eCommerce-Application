@@ -14,7 +14,7 @@ async function getSimpleCart() {
     try {
       const response = await getApiRoot()
         .withProjectKey({
-          projectKey: 'new-ecommerce-app',
+          projectKey: import.meta.env.VITE_PROJECT_KEY,
         })
         .carts()
         .post({
@@ -36,7 +36,7 @@ async function getSimpleCart() {
   }
   return getApiRoot()
     .withProjectKey({
-      projectKey: 'new-ecommerce-app',
+      projectKey: import.meta.env.VITE_PROJECT_KEY,
     })
     .carts()
     .withId({ ID: cartcookieValue! })

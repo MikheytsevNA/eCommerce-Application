@@ -1,13 +1,13 @@
 import { createFooter } from './components/footer';
 import Header from './components/header';
-import { PageNotFound } from './pages/404.page';
+import { PageNotFound } from './Pages/404.page';
 import { MainPage } from './pages/Main.page';
 import createLoginPage from './pages/login';
 import createRegistrationPage from './pages/registration';
 import { doOnAuthSubmit } from '../Controller/login/doOnSubmit';
 import { doOnRegistrationSubmit } from '../Controller/registration/doOnSubmit';
 import { ProfilePageView } from './Pages/Profile.page';
-import { AboutPage } from './pages/about.page';
+import { AboutPage } from './Pages/about.page';
 import { Catalog } from './Pages/catalog';
 import { Basket } from './Pages/basket';
 import { getCart } from '../Controller/basket/basket';
@@ -33,9 +33,12 @@ export class View implements IView {
     let itemCount: number | null = null;
     const response = await getCart();
     if (response !== null) {
-      itemCount = response.lineItems.reduce((accumulator, value) => {
-        return accumulator + value.quantity;
-      }, 0);
+      itemCount = response.lineItems.reduce(
+        (accumulator: number, value: { quantity: number }) => {
+          return accumulator + value.quantity;
+        },
+        0
+      );
     }
     if (check === null) {
       option = { isLogged: true, cartItems: itemCount ?? 0 };

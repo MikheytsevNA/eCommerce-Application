@@ -4,7 +4,7 @@ import { AuthResponse, User } from './loginTypes.ts';
 function getProject(user: User) {
   const request = getPasswordApiRoot(user)
     .withProjectKey({
-      projectKey: 'new-ecommerce-app',
+      projectKey: import.meta.env.VITE_PROJECT_KEY,
     })
     .me()
     .login()

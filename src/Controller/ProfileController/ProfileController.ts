@@ -4,7 +4,7 @@ export class ProfileController {
   async getCustomer() {
     return await getApiRoot()
       .withProjectKey({
-        projectKey: 'new-ecommerce-app',
+        projectKey: import.meta.env.VITE_PROJECT_KEY,
       })
       .me();
   }
@@ -63,7 +63,7 @@ export class ProfileController {
 
     return await getApiRoot()
       .withProjectKey({
-        projectKey: 'new-ecommerce-app',
+        projectKey: import.meta.env.VITE_PROJECT_KEY,
       })
       .me()
       .password()

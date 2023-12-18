@@ -69,7 +69,7 @@ export default defineConfig({
       plugins: [rollupNodePolyFill],
     },
   },
-  /* plugins: [
+  plugins: [
     viteStaticCopy({
       targets: [
         {
@@ -78,5 +78,5 @@ export default defineConfig({
         },
       ],
     }),
-  ], */
+  ],
 });

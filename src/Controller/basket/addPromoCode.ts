@@ -21,7 +21,7 @@ export async function addPromoCode(code: string) {
   try {
     const response = await getApiRoot()
       .withProjectKey({
-        projectKey: 'new-ecommerce-app',
+        projectKey: import.meta.env.VITE_PROJECT_KEY,
       })
       .carts()
       .withId({ ID: cartCookieValue! })

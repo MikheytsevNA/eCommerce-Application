@@ -4,7 +4,7 @@ import { getOptions } from './products.type.ts';
 function getSimpleProject(options?: getOptions) {
   return getApiRoot()
     .withProjectKey({
-      projectKey: 'new-ecommerce-app',
+      projectKey: import.meta.env.VITE_PROJECT_KEY,
     })
     .productProjections()
     .search()
